@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="assets/Luxury fashion & independent designers _ SSENSE.jpg" type="image/icon type">
+    <title>
+       
+        song recom bot</title>
+    <style> section{
+        padding: 60px 0;
+    }
+    .card {
+    height: 300px;
+}
+
+.chatbox {
+    width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .conversation {
+    height: 400px;
+    padding: 10px;
+    font: 15px arial, sans-serif;
+    overflow-y:auto;
+  }
+  .input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+.input input {
+    flex: 1;
+    padding: 5px;
+    border: gray;
+    border-radius: 5px;
+    outline-color: gray;
+    outline-width: 5px;
+  }
+
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light-subtle">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    Song reccomender
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#topics">About the Site</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="#chatbot" class="nav-link">Chatbot</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="#chatbot" class="btn btn-danger">Try Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+   <section id="intro">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 text-center text-md-start">
+                <h1>
+                    <div class="display-2">TELL THE GENRE, ARTIST </div>
+                    <div class="display-6 text-muted"> get song recommendation</div>
+                </h1>
+                <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet </p>
+                <body>
+                <a href="#chatbot" class="btn btn-lg btn-outline-success">Try Now</a>
+            </div>
+            <div class="col-md-5 text-center d-md-block">
+                <img class="img-fluid" src="assets/made_on_picrew-removebg-preview.png" alt="">
+            </div>
+        </div>
+    </div>
+    <section id="chatbot" class="bg-light mt-5">
+        <div class="container-lg col-5 col-sm-8">
+            <div class="row my-1 align-items-center justify-content-center">
+                <h2 class="text-center mb-5">Chatbot</h2>
+            </div>
+        </div>
+        <div class="chatbox">
+          <div class="conversation"></div>
+          <div class="input">
+            <input type="text" placeholder="Type a genre to get song suggestions">
+            <button onclick="sendMessage()" class="btn btn-dark"><i class="bi bi-heart"></i></button>
+          </div>
+        </div>
+                            
+                        
+    </section>
+    <section id="topics">
+        <div class="container-md">
+            <div class="text-center">
+                <h2><p><i class="bi bi-headphones"></i></p></h2>
+                <h1>More about it </h1>
+                <p class="lead text-muted"> Diving in deep</p>
+                
+            </div>
+            <div class="row g-2 justify-content-around align-items-center">
+                <div class="col-3 col-lg-3">
+                    <img src="assets/bentobox-removebg-preview.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="accordion" id="openai">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="head1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">OpenAi</button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="head1" data-bs-parent="#openai">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab sint officia animi, quisquam dolores odit deserunt doloremque adipisci veniam cumque porro nisi voluptatibus non error praesentium? Adipisci, tenetur laboriosam!</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae, provident atque obcaecati, vel earum maiores rem sequi voluptas eveniet velit, incidunt dolorum fugit. Reiciendis nostrum veniam facilis dolores cumque?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="head2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">GPT-3</button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="head2" data-bs-parent="#openai">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab sint officia animi, quisquam dolores odit deserunt doloremque adipisci veniam cumque porro nisi voluptatibus non error praesentium? Adipisci, tenetur laboriosam!</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae, provident atque obcaecati, vel earum maiores rem sequi voluptas eveniet velit, incidunt dolorum fugit. Reiciendis nostrum veniam facilis dolores cumque?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="head3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Spotify</button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="head3" data-bs-parent="#openai">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab sint officia animi, quisquam dolores odit deserunt doloremque adipisci veniam cumque porro nisi voluptatibus non error praesentium? Adipisci, tenetur laboriosam!</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae, provident atque obcaecati, vel earum maiores rem sequi voluptas eveniet velit, incidunt dolorum fugit. Reiciendis nostrum veniam facilis dolores cumque?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="head4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">The Developer</button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="head4" data-bs-parent="#openai">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ab sint officia animi, quisquam dolores odit deserunt doloremque adipisci veniam cumque porro nisi voluptatibus non error praesentium? Adipisci, tenetur laboriosam!</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem recusandae, provident atque obcaecati, vel earum maiores rem sequi voluptas eveniet velit, incidunt dolorum fugit. Reiciendis nostrum veniam facilis dolores cumque?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    </section>
+    
+
+   <script src="app.js"></script>
+ 
+</body>
+</html>
